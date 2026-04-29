@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Commit History Visualizer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <h1>GitHub Commit History Visualizer</h1>
+        <p>Explore the latest 100 commits in a repository.</p>
+      </div>
+
+      <form id="repo-form" class="repo-form">
+        <input
+          id="repo-input"
+          type="text"
+          placeholder="owner/repo"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Load Repo</button>
+      </form>
+    </header>
+
+    <main class="app-layout">
+      <section class="graph-panel">
+        <div id="status-message" class="status-message">
+          Enter a repository like <strong>octocat/Hello-World</strong> to begin.
+        </div>
+        <svg id="commit-graph" aria-label="Commit history graph"></svg>
+      </section>
+
+      <aside class="details-panel">
+        <h2>Commit Details</h2>
+        <div id="commit-details" class="commit-details empty">
+          Click a commit node to view its details.
+        </div>
+      </aside>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
